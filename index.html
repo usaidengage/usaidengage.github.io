@@ -1,0 +1,3104 @@
+
+<html>
+    <head>
+        <meta charset='utf-8' />
+    <!---- <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script> -->
+    <!---- <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' /> -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href='map.css'>
+    </head>
+    <!-- <div class='map-overlay' id='legend'></div> -->
+
+
+    <body>
+            <div style='width: 100%; height: 100%;  position: absolute;'>
+                    <div id='map'></div>     
+                    <div class='map-overlay' id='features'><div id='pd'><p>Click on buble and hover on point!</p></div></div>
+                    <div id='legend' class='map-overlay'>
+                            <!-- <h4>Partners</h4> -->
+                            <div><span style='background-color: #9a0064' class='legend-key'></span>Coalition member</div>
+                            <div><span style='background-color: #a6ce39' class='legend-key'></span>Informal Civic Education</div>
+                            <div><span style='background-color: #ffcb05' class='legend-key'></span>ISO</div>
+                            <div><span style='background-color: #00b8f1' class='legend-key'></span>KOLO fellow</div>
+                            <br>
+                            <!-- <div><span style='background-color: #0076a3' class='legend-key'></span>KOLO fellow</div>
+                            <div><span style='background-color: #adbdd0' class='legend-key'></span>KOLO fellow</div>
+                            <div><span style='background-color: #0092c8' class='legend-key'></span>KOLO fellow</div> -->
+
+
+                            <div><span style='background-color: #e0861a' class='legend-key'></span>Click to see!</div>
+                            <!-- <div><span style='background-color: #00b8f1'></span>5,000,000</div> -->
+                            <!-- "#9a0064" "#a6ce39" "#ffcb05" "#00b8f1" "#e39717" "#5a2a00" "#74005f" "#e7b809"
+                            "#e0861a" "#adbdd0" "#7c0055" "#6a8a22" "#d3a809" "#0076a3" "#ca6c18" "#726963"
+                            "#88ac2e" "#0092c8" "#726963" -->
+
+                    </div>
+                </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiemVmbXVkIiwiYSI6ImNqZzN5anVyZDBzM3EycXFuOGZobjBwNjEifQ.xsN06bb02CwBS_HJT14b6A';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/zefmud/cjtyd0d5209mi1fsy7t6ctqld',
+        center: [30.558756, 50.453753],
+        zoom: 2.5,
+        maxBounds: [
+            [20.67,43.77],
+            [41.34,52.66]
+            ]
+        });
+
+        map.on('load', function() {
+            map.addSource("eng", {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.339888,50.745054 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Youth NGO \"Volyn Institute of Law\"",
+                        "contact_person_eng":"Iryna Haiduchyk",
+                        "point_type":"ISO",
+                        "iso_type":"New UNDP Hubs eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.656795,50.258781 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Youth NGO \"Modern Format\"",
+                        "contact_person_eng":"Zhanna Soloviova",
+                        "point_type":"ISO",
+                        "iso_type":"New UNDP Hubs eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.977288,49.420522 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Podil Law League",
+                        "contact_person_eng":"Andriy Misiats",
+                        "point_type":"ISO",
+                        "iso_type":"New UNDP Hubs eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.558481,49.587129 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Institute of Analysis and Advocacy",
+                        "contact_person_eng":"Yurii Nestulia",
+                        "point_type":"ISO",
+                        "iso_type":"New UNDP Hubs eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.4619,49.242785 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Human Rights Organisation \"The Source of Hope\"",
+                        "contact_person_eng":"Alla Studilko",
+                        "point_type":"ISO",
+                        "iso_type":"New UNDP Hubs eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.337,47.560578 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Agency for Economic Development",
+                        "contact_person_eng":"Serhii Averkov",
+                        "point_type":"ISO",
+                        "iso_type":"New UNDP Hubs eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.464862,49.238848 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil Initiatives of Ukraine",
+                        "contact_person_eng":"Yuriy Stepanets, Head of the Board",
+                        "point_type":"ISO",
+                        "iso_type":"New USAID/DOBRE intermediary organizations eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.545,49.587255 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Fund of Community Development \"The Initiative\"",
+                        "contact_person_eng":"Ganna Petrenko, Head of the Board",
+                        "point_type":"ISO",
+                        "iso_type":"New USAID/DOBRE intermediary organizations eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 35.042594,48.470077 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ukrainian Centre of Social Partnertship",
+                        "contact_person_eng":"Vitalii Zhehanskyi, Head of Organization, Phone +38 067 640 13 30, vitaliy.zheganskiy@gmail.com, website: https://www.facebook.com/ukrcsp/ ",
+                        "point_type":"ISO",
+                        "iso_type":"New USAID/DOBRE intermediary organizations eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.72083,46.47629 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil Partnership \"For Transparent Local Budgets\"",
+                        "contact_person_eng":"Boyko Anatoliy",
+                        "point_type":"ISO",
+                        "iso_type":"New USAID/DOBRE intermediary organizations eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 37.586985,48.735756 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Access Point\"",
+                        "contact_person_eng":"Svitlana Tkachenko, Head of the organization",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.253526,49.99109 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kharkiv University Consortium",
+                        "contact_person_eng":"Bielova Liudmyla, ",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.605791,46.630804 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kherson Community Fund \"Zakhyst\"",
+                        "contact_person_eng":"Polska Larysa, Head of the Board",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.610652,46.634453 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil Centre \"New Generation\"",
+                        "contact_person_eng":"Olha Zhukova, Head of the Board ",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 38.50959,48.944291 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil Initiative of Luhansk Region",
+                        "contact_person_eng":"Tetiana Kirilova, Head of the organization",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.047331,49.798122 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Centrer \"Women's Perspectives\"",
+                        "contact_person_eng":"Lubov Maksymovych, Head of the organization",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.041085,49.843086 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"West Ukrainian Resource Center",
+                        "contact_person_eng":"Vasyl Poluiko, President of West Ukrainian Resource Centre",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.961571,46.966456 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Fund \"LASKA\"",
+                        "contact_person_eng":"Varuhhina Lyubov, Chairperson of the Board",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.749677,46.478042 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Association for People's Self-Organisation",
+                        "contact_person_eng":"Tetiana Kirillova, Head of Association",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.248116,50.618904 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Rivne Oblast Organisation “Committee of voters of Ukraine” ",
+                        "contact_person_eng":"Olexii Goretsky, Executive Director",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.256331,50.621765 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Volyn Resource Center",
+                        "contact_person_eng":"Vasyl Kashevsky, President",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.794136,50.915 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Social Fund \"Sumy\"",
+                        "contact_person_eng":"Oleksandra Martynenko, Executive Director",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.498754,49.231976 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Community Fund \"Podilska Hromada\"",
+                        "contact_person_eng":"Victor Bronyuk, Head of Board",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 22.474537,48.734543 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charity Fund \"Center of Civil Initiatives\"",
+                        "contact_person_eng":"Andriy Vyshnyak ",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.511587,50.435717 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil Holding \"Group of Influence\"",
+                        "contact_person_eng":"Tetyana Durnyeva, Executive Director",
+                        "point_type":"ISO",
+                        "iso_type":"ISO eligible for USAID/ENGAGE CD Marketplace vouchers support"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.6177837080489,49.55842265 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Democratic Alliance of the Ternopil oblast",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.5960082,49.5577398 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Expert and analytical group \"Accent\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.609291,49.55315 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Art Festival \"Ї\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.65,49.553125 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Youth Association \"Fine Misto\" ",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.601106,49.550037 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Ukrainian scout organization \"Plast\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.636588,49.557215 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Creative association \"Nivroku\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.60248,49.548871 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Ternopil human rights group",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.62595,49.54342 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Ternopil Press Club",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.55,49.548867 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for civil monitoring and analytics",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.589373,49.553166 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Regional Development and Law",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.593206,49.557352 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Centre UA in Ternopil",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.649511,49.521708 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Public Association \"Business Council of Ternopil region\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.596887,49.556983 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"\"All-Ukrainian association \"AvtoMaydan\", Ternopil branch",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.571904,49.544364 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Ternopil Oblast' Charitable Foundation \"The Future of the Orphans\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.595,49.56197 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Union of ATO Combatants and Volunteers \"The Strength of Ukraine\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  { }
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Maidan-Ternopil",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.590647,49.555125 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Strong Galicia",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.597184,49.542641 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Mist",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.615867,49.559904 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ternopil media center",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.615751,49.556853 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Educational and analytical community development center",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.578467,49.545715 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Public Union \"Youth Center of Ternopil\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.56,49.55183 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Bunker S",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.591616,49.555426 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Atom",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.598643,49.55963 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"All-Ukrainian public association \"Institute Respublika\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.575773,49.544805 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Sources of Public Health",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.563016,49.552422 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Communication Studies",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.574255,49.54551 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Youth Association \"Friendship\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.28631,50.610856 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Rivne Social Partnership Centre",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.210659,50.637091 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Anticorruption monitoring\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.208964,50.631627 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Green Alternative\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.251471,50.620003 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Initiative group \"Rivne - a city friendly to a child\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.251265,50.619455 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civic Initiative \"Urban-Movement \"Rivne velosypedne\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.265946,50.60997 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Youth acts\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.280733,50.624899 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Agency for Social Development\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.266,50.642977 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Rivne branch of \"Civil Network OPORA\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.251047,50.614382 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Council of Heads of OSBB of Rivne\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.202631,50.630413 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Network \"100% of Life\" in Rivne",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.261229,50.642972 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Informational and educational space \"Infohab\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.209017,50.611805 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Journalistic Investigation Agency \"Fourth Power\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.21344,50.633669 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Ecoclub\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.248014,50.620611 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Ukrainian scout organization \"Plast\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.261089,50.634483 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charitable Fundation \"Treasury of Hope\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.273366,50.627473 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"New Level\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.273276,49.979659 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO ”Kharkiv Аnticorruption Centre”",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.323174,49.995901 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"\"Modern Woman\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.232469,49.990934 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Public movement \"Chesno\" in Kharkiv",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.245648,49.977974 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Foundation for Local Democracy",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.2637,49.934183 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"The Institute of Public Policy",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.24726,50.003937 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"\"Civil Network OPORA\", Kharkiv brench",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.211233,50.018155 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"ExpertyZa reform",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.214339,50.021972 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Social Union \"Slobozhansky Strategies\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.244925,50.001436 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Partnership of Rukh participants ",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.062474,49.841213 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Slobozhansky Resource Center\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.227412,50.020999 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Blahosvit",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.179243,49.974912 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Foundation of regional initiatives (FRI)",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.888007,49.529437 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Young Initiative Community\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.866039,49.541159 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO “Buslav Sich”",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.866046,49.535711 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Bohuslav trade union organization of health workers",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.891029,49.541148 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Football Federation of Boguslavshchyna\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.870249,49.533969 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Boyeslav\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.784338,50.914049 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Bureau of Policy Analysis\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.8,50.90845 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Community Foundation “Sumy”",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.794117,50.90849 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Social Partnership Center\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.798109,50.906888 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Civic Bureau\"Pravozakhyst\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.789289,50.926346 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Analytical Center\" Internet Law UA \"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.792531, 50.906827 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Student Brotherhood of Sumy Region",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.804649,50.912228 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center UA in Sumy region",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.793897,50.907009 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Misto rozumnykh\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.785396,50.923327 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Bureau of Legal Communications\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.241295,48.502364 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Association of Political Sciences\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.266905,48.509299 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO Center for Ukrainian Policy \"Exampey\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.278546,48.511786 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"People's control of Kirovograd region\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.261453,48.508219 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kropivnitsky regional branch of \"Movement for Ukrainian language' protection\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.261858,48.507379 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Media Investigations \"Prozoro\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.261127,48.511727 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Partnership \"Prosvita\" ",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.26318,48.512438 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Joint Action\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.534073,48.331612 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"\"Press Club of Reforms\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.243183,48.508281 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charitable Foundation \"Kirovograd Volonterskiy\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.274458,48.513434 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Territory of Success\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.261303,48.507429 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Network \"100% of Life\" in Kropyvnytskyi",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.271065,48.513302 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Committee for the Promotion of Information Society Development\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.2767,48.494669 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Ukrainian scout organization \"Plast\" in Kropyvnytskyi",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.259954,48.508718 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" \"Zvilneni\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.269721,48.516487 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Volunteer Association of Maidan Participants and Combat Actions\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.266125,48.515845 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Kropyvnitskyi' Greening\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.210648,48.491854 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Workshop of Active People\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.245682,48.49193 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" MAMA-86",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.256453,48.509962 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kropyvnitskyi Regional Office of the Committee of Voters of Ukraine",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.222421,48.497145 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO of Mothers of Disabled Children \"Mother's Heart\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.202658,48.497456 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Association of Parents of Children with Disabilities and Disabled Persons \"Life Without Limits\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.269033,48.502529 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Guard of the Constitution\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.24,48.491937 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Flora\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.282656,48.472671 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Party control\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.294263,48.504255 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Union of Free Initiative Women",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.258547,48.512425 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"New active Ukrainians\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.274067,48.513524 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" \"Association for promotion of self-organization among population\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.201328,48.490563 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Parents Council of Kropivnitskyi\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.668036,49.845712 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chuguyiv human rights protection group",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.693993,49.837301 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Center for Legal and Political Studies \"Duma\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.368103,49.942518 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":" Network of Anti-Corruption Centers",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.68926,49.833077 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil Initiative for Animal Protection",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.689786,49.834627 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil initiative of ATO participants",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.690884,49.836322 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chuguev Local Center for the Provision of Secondary Legal Aid",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.687353,49.837664 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Newspaper \"Legal Position\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.746775,49.638117 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Our house \"Mospanove\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.588554,49.796253 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Dialogue with Youth\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.695286,49.830901 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Psychological Rehabilitation for Addicts \"Method\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.684585,49.83988 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civil initiative \"Sports club \"Chuhuiv\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.68377,49.843905 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Civic Initiative \"Women of Chuhuiv region\"",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.690325,49.840695 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chuguiv info",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.694143,49.838096 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chuhuiv Office of the Legal Development Network",
+                        "contact_person_eng":"",
+                        "point_type":"Coalition member",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.518013,50.435658 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charity Fund ‘Foundation ‘CULTAURA’",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.609871,50.431792 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Compass Youth Club",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.685965,50.424538 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"KyivPride",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.500039,50.476229 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Positive Women",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.451399,50.430231 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Garage Gang",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.609368,50.440618 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Crimean Diaspora",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.522182,50.448111 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Oleksandr Korniyenko",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.439982,50.473536 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ukrainian Adult Education Association",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.528585,50.450856 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Association of Middle East Studies",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.219534,50.03402 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Creavita",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.226658,49.969513 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kharkiv with You",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.761084,50.502481 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"ONLAIN",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.53917,50.445257 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Students Fraternity",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.066417,49.446828 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Social Partnership",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.928703,48.295296 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Lab for Democratic Transformations",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.55381,49.587318 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Poltava Charity Fund Initiative",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.433628,50.446989 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ukrainian Toronto TV",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.266833,51.495452 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chernihiv Centre for Human Rights",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 35.025125,48.45952 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Tamarisk Centre",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.426045,50.360688 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Network of Responsible People",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.549028,50.411168 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Cross Media Organization",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.939689,48.289332 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chernivtsi Committee of Voters",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.555,50.411167 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Change Communication",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 35.143913,47.839116 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Gender Z",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.074579,49.441361 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Hromadske TV: Cherkasy",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.642805,50.429347 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Podillya-Socium Center",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.383779,50.455856 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Local Economy",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 33.110554,48.673692 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Oleksandriya Gender Information Center",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.619301,50.449916 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ukrainian Center for Civic Initiatives “Svitlo”",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.527145,50.443542 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Association UMDPL",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.522854,50.441879 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charity Fund “The Institute of Civic Education and Public Programs”",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.274698,48.523071 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Institute of Socio-Cultural Management",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.429158,50.445079 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Prometheus",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.519402,50.465209 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Interdisciplinary Anti-corruption Research and Education Centre",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.29391,51.498005 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"MART",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.037491,49.823114 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ukrainian Catholic University",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.518793,50.442298 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Studena",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.547572,50.442371 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Smart Education",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.63636,50.407129 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ukrainian Public Union “Pobratymy” ",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 38.373314,49.012674 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Student Fellowship of Luhansk Oblast",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.668423,50.25724 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Zhytomyr Regional Association of Social Services",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.520206,50.452926 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"South (Pivden)",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 22.291628,48.63003 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ekosfera",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.523532,50.460174 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Free People Employment Center",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.387807,50.386519 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Donetsk Youth Debate Center",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.325497,50.745184 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Youth Platform",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.494269,50.457093 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Teachers for Democracy and Partnership",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.52223,50.46579 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"School for Policy Analysis",
+                        "contact_person_eng":"",
+                        "point_type":"informal civic education",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.786545,46.753271 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Berdyansk State Pedagogical University",
+                        "contact_person_eng":"Yelyzaveta Perelyhina",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.333146,47.560577 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Berdyansk State Pedagogical University",
+                        "contact_person_eng":"Olena Zavorotchenko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.965619,46.730275 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Southern Initiative",
+                        "contact_person_eng":"Viktor Sikalenko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.52551,49.536816 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Insha Osvita",
+                        "contact_person_eng":"Vasyl Kulevchuk",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 23.50559,49.351226 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Chatiry",
+                        "contact_person_eng":"Marta Pryriz ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.879855,50.30452 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"The League of Active Slavutian",
+                        "contact_person_eng":"Maksym Zyza",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.565467,46.751797 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Muzykivka Village Council",
+                        "contact_person_eng":"Maryna Hazhur",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.491453,48.507344 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Econimic Initiatives",
+                        "contact_person_eng":"Oksana Yuzva",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.357731,50.631851 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Bilychanka",
+                        "contact_person_eng":"Viktoriia Slyvka",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.233618,46.291303 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Oleksijivka Public School",
+                        "contact_person_eng":"Anastasiia Atashian",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.175076,50.722526 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Youth Resource Center \"New Wings\"",
+                        "contact_person_eng":"Pavlo Medyna",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.243424,48.483701 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Unemployed",
+                        "contact_person_eng":"Pavlo Chehorka",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 37.585947,48.745507 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Studena",
+                        "contact_person_eng":"Volodymyr Babych",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.215148,48.746737 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charity Fund \"Volia\"",
+                        "contact_person_eng":"Liudmyla Kravchenko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.013134,48.480295 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Institute for Democratic Initiatives",
+                        "contact_person_eng":"Olha Bila",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 27.674062,49.073663 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Bar City Council",
+                        "contact_person_eng":"Serhii Mirchuk",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.54972,46.609585 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"First Judicial Bureau \"Ochakiv\"",
+                        "contact_person_eng":"Oleksii Zemlianyi",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.555814,49.67156 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Volunteer Group for Army Support \"Blue Stone\"",
+                        "contact_person_eng":"Roksolana Mudrak",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 33.465526,46.802519 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kakhovka School #4",
+                        "contact_person_eng":"Mariia Papakonstandi",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.036129,50.155878 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Center for Social Legal Assistance",
+                        "contact_person_eng":"Bohdan Zelenyi",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.598046,48.814046 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Galatyga",
+                        "contact_person_eng":"Mariia Bezushko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 32.352961,46.358078 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Chulakivka Village Council",
+                        "contact_person_eng":"Olena  Yastremska",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 37.584079,48.737749 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Kramatorsk City Council, Depatment of Utilities",
+                        "contact_person_eng":"Mykhailo Petrenko ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 34.658274,49.630099 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"The Team of Compassionate",
+                        "contact_person_eng":"Oleksandra Syrotenko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 36.212986,49.3928 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Pervomayskyi City Council",
+                        "contact_person_eng":"Liudmyla Fedorchenko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.713849,49.396144 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Stary Pryluky Community Council",
+                        "contact_person_eng":"Oleksii Smishnyi ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.849286,48.0451 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"United Youth of Mykolaiv Oblast",
+                        "contact_person_eng":"Yaroslava Bilous",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.837233,49.822155 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"We Can Overcome\"",
+                        "contact_person_eng":"Hanna Perepechai ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 28.496669,49.241519 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Vinnytsia State Pedagogical University",
+                        "contact_person_eng":"Kateryna Semes ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 23.509279,49.354698 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charity Fund \"Caritas\" in Ukrainian Catholic Eparchy of Sambir–Drohobych",
+                        "contact_person_eng":"Uliana Yazhyk",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 30.089831,50.562687 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Nemishaevo Village Council",
+                        "contact_person_eng":"Anna Cherednichenko",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 39.054668,49.575583 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"",
+                        "contact_person_eng":"Mykhailo Bilianskyi",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 33.943757,50.024095 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Public Library in Velyki Sorochyntsi",
+                        "contact_person_eng":"Natalia Hrin",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 35.080904,48.563864 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"NGO \"Flower of the Soul\"",
+                        "contact_person_eng":"Anton Vusyk",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 37.364124,48.097355 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"The Country of Free Community",
+                        "contact_person_eng":"Valerii Volskyi ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 25.042488,48.540437 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Charity Fund \"Konyk Help\"",
+                        "contact_person_eng":"Nazarii Todoriv ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 26.502414,48.509782 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Tourist Agency \"Svit-Tour\"",
+                        "contact_person_eng":"Anastasiia Dranchuk",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 38.383551,48.699352 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Комишуваський навчально-виховний комплекс «загальноосвітній навчальний заклад І Попаснянської районної ради Луганської області, Вчитель математики та економіки",
+                        "contact_person_eng":"Stanislav Bohdanov",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 24.302196,51.025786 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Ovadne Village Council",
+                        "contact_person_eng":"Iryna Tkachuk",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 37.604341,48.726127 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Design Studio and Printing House \"Horlyvi\"",
+                        "contact_person_eng":"Anna Stativa",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                        "type": "Point",
+                        "coordinates":  [ 31.317087,47.907808 ]
+                        },
+                        "properties": {
+                        "organisation_title_eng":"Arbuzynka Village Council",
+                        "contact_person_eng":"Iryna Lutchyna ",
+                        "point_type":"KOLO fellow",
+                        "iso_type":""
+                        }
+                    }
+                    ]
+                    },
+                cluster: true,
+                clusterMaxZoom: 14, // Max zoom to cluster points on
+                clusterRadius: 50
+            });
+
+            map.addLayer({
+                id: "clusters",
+                type: "circle",
+                source: "eng",
+                filter: ["has", "point_count"],
+                paint: {
+                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                // with three steps to implement three types of circles:
+                //   * Blue, 20px circles when point count is less than 100
+                //   * Yellow, 30px circles when point count is between 100 and 750
+                //   * Pink, 40px circles when point count is greater than or equal to 750
+                // "circle-color": [
+                // "step",
+                // ["get", "point_count"],
+                // "#00b8f1",
+                // 10,
+                // "#ffcb05",
+                // 40,
+                // "#9a0064"
+                // ],
+                "circle-color": '#e0861a',
+                "circle-radius": [
+                "step",
+                ["get", "point_count"],
+                10,
+                10,
+                20,
+                40,
+                25
+                ]
+                }
+            });
+            map.addLayer({
+                    id: "cluster-count",
+                    type: "symbol",
+                    source: "eng",
+                    filter: ["has", "point_count"],
+                    layout: {
+                    "text-field": "{point_count_abbreviated}",
+                    "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+                    "text-size": 12
+                    }
+            });
+                
+            map.addLayer({
+                    id: "unclustered-point",
+                    type: "circle",
+                    source: "eng",
+                    filter: ["!", ["has", "point_count"]],
+                    paint: {
+                    
+                    "circle-radius": 5,
+                    "circle-stroke-width": 1,
+                    "circle-stroke-color": "#fff",
+                    // "circle-color": "grey"}});
+                    "circle-color": [
+                        'match',
+                        ['get', 'point_type'],
+                        'ISO', '#ffcb05',
+                        'Coalition member', '#9a0064',
+                        'informal civic education', '#a6ce39',
+                        'KOLO fellow', '#00b8f1',
+                        "grey"
+                    ]
+                    }
+
+            });
+                
+            // inspect a cluster on click
+            map.on('click', 'clusters', function (e) {
+                var features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+                console.log(features)
+                var clusterId = features[0].properties.cluster_id;
+                map.getSource('eng').getClusterExpansionZoom(clusterId, function (err, zoom) {
+                    if (err)
+                        return;
+                    map.easeTo({
+                        center: features[0].geometry.coordinates,
+                        zoom: zoom
+                    });
+                });
+            });
+
+            map.on('mousemove', function(e) {
+                var engage_layer = map.queryRenderedFeatures(e.point, {
+                    layers: ['unclustered-point']
+                });
+                if (engage_layer.length > 0) {
+                    if (engage_layer[0].properties.point_type != "KOLO fellow") {
+                        document.getElementById('pd').innerHTML = 
+                            '<h3><strong>' + engage_layer[0].properties.organisation_title_eng + '</strong></h3>' +  
+                            '<p>' + engage_layer[0].properties.point_type + '</p>';
+                            document.getElementById('features').setAttribute("style", "height:150px");
+                    } else {
+                        document.getElementById('pd').innerHTML = 
+                            '<h3><strong>' + engage_layer[0].properties.contact_person_eng + '</strong></h3>' +  
+                            '<p>' + engage_layer[0].properties.point_type + '</p>' +
+                            '<p>' + engage_layer[0].properties.organisation_title_eng + '</p>';
+                            document.getElementById('features').setAttribute("style", "height:150px");
+                    }                   
+                } else {
+                    document.getElementById('pd').innerHTML = '<p>Click on buble and hover on point!</p>';
+                    document.getElementById('features').setAttribute("style", "height:57px");
+                }
+            });
+                    
+            map.on('mouseenter', 'clusters', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+            map.on('mouseleave', 'clusters', function () {
+                map.getCanvas().style.cursor = '';
+            });
+        });
+    </script>
+    </body>
+</html>
